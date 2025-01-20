@@ -123,11 +123,6 @@ print(experience)
 
 
 
-# Commented out IPython magic to ensure Python compatibility.
-# %pip install llama-index
-# %pip install llama-index-embeddings-huggingface
-# %pip install llama-index-llms-gemini
-
 from llama_index.core import SimpleDirectoryReader, Settings
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 def load_data(data):
@@ -138,7 +133,7 @@ def load_data(data):
 
 from llama_index.llms.gemini import Gemini
 def model():
-    llm = Gemini(api_key="AIzaSyDrkreHTnxikbUthuD5HOOQizo7jlWDaiw", model = 'models/gemini-pro', temperature = 0.0)
+    llm = Gemini(api_key= API_KEY, model = 'models/gemini-pro', temperature = 0.0)
     return llm
 
 
@@ -297,11 +292,6 @@ def prompts(document):
         return name, summary, education, technical_skills, accomplishments, experience, projects
     except Exception as e:
         return " "
-
-
-
-
-
 
 
 
